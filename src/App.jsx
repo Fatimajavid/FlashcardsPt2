@@ -61,6 +61,11 @@ const App = () => {
 
   const flipCard = () => setIsFlipped(!isFlipped);
 
+  const showPreviousCard = () => {
+    setCurrentCardIndex((prevIndex) => (prevIndex === 0 ? cards.length - 1 : prevIndex - 1));
+    setIsFlipped(false);
+  };
+  
   const showNextCard = () => {
     const nextIndex = Math.floor(Math.random() * cards.length);
     setCurrentCardIndex(nextIndex);
@@ -81,7 +86,7 @@ const App = () => {
               <h3>{isFlipped ? cards[currentCardIndex].answer : cards[currentCardIndex].question}</h3>
             </div>
             <div className="button-container">
-              <button onClick={() => setCategory(null)} className="back-arrow">&#8592;</button>
+              <button onClick={showPreviousCard} className="back-arrow">&#8592;</button>
               <button onClick={showNextCard} className="next-arrow">&#8594;</button>
             </div>
             <button className="back-to-categories" onClick={goBackToCategories}>Back to Categories</button>
