@@ -56,9 +56,10 @@ body {
   background-color: #4caf50; /* Lighter green for hover */
 }
 
-.category-card h3 {
-  font-size: 1.6rem;
-  font-weight: bold;
+.card h3 {
+  font-size: 20px; 
+  line-height: 1.6; 
+  text-align: center; 
 }
 
 /* Flashcard Container */
@@ -87,6 +88,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+
 
 .card:hover {
   transform: scale(1.05);
@@ -154,6 +156,6 @@ button.back-arrow:hover, button.next-arrow:hover {
 /* Header */
 h1 {
   font-size: 2.5rem;
-  color: #333333;
+  color: #2c6e49;
   margin-bottom: 2rem;
 }

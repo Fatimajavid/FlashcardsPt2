@@ -61,14 +61,13 @@ const App = () => {
 
   const flipCard = () => setIsFlipped(!isFlipped);
 
-  const showPreviousCard = () => {
-    setCurrentCardIndex((prevIndex) => (prevIndex === 0 ? cards.length - 1 : prevIndex - 1));
+  const showNextCard = () => {
+    setCurrentCardIndex((prevIndex) => Math.min(prevIndex + 1, cards.length - 1)); // Increment the index
     setIsFlipped(false);
   };
-  
-  const showNextCard = () => {
-    const nextIndex = Math.floor(Math.random() * cards.length);
-    setCurrentCardIndex(nextIndex);
+
+  const showPreviousCard = () => {
+    setCurrentCardIndex((prevIndex) => Math.max(prevIndex - 1, 0)); // Decrement the index
     setIsFlipped(false);
   };
 
